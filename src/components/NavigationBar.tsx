@@ -1,11 +1,10 @@
 
 import { Search, Grid2X2, Home, FileText, Book, Bell, Settings } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const NavigationBar = () => {
   return (
-    <nav className="fixed left-4 top-1/2 -translate-y-1/2 z-50">
-      <div className="w-[88px] h-auto max-h-[90vh] relative bg-black rounded-[28px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.05)] py-5">
+    <nav className="fixed left-4 h-[calc(100vh-48px)] my-6 z-50">
+      <div className="h-full w-[88px] relative bg-black rounded-[28px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.05)] py-5">
         {/* Logo */}
         <div className="px-6 mb-8">
           <div className="w-10 h-10 relative cursor-pointer transition-transform duration-300 hover:scale-105">
