@@ -1,17 +1,80 @@
-import { Search, Grid2X2, Building2, MessageSquareQuote, Users, Bell, Settings } from "lucide-react";
+import { Search, Grid2X2, Building2, MessageSquareQuote, Users, Bell, Settings, Menu } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import SearchOverlay from "./SearchOverlay";
 import { useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const NavigationBar = () => {
   const location = useLocation();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   const isActive = (path: string) => {
     return location.pathname === path;
   };
 
+  if (isMobile) {
+    return (
+      <>
+        <SearchOverlay 
+          isOpen={isSearchOpen} 
+          onClose={() => setIsSearchOpen(false)} 
+        />
+        
+        {/* Top Header */}
+        <div className="fixed top-0 left-0 right-0 z-50 px-4 py-3 flex justify-between items-center bg-white">
+          {/* Logo */}
+          <Link to="/dashboard" className="block">
+            <div className="w-10 h-10 relative cursor-pointer">
+              <div className="w-10 h-10 left-0 top-0 absolute bg-[#2cff3a] rounded-full" />
+              <div className="w-3.5 h-[38px] left-[13px] top-[1px] absolute text-center text-black text-[28px] font-bold font-poppins">Ë</div>
+            </div>
+          </Link>
+
+          {/* Notifications */}
+          <Link to="/notifications">
+            <button className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
+              <Bell className="w-5 h-5 text-white" />
+            </button>
+          </Link>
+        </div>
+
+        {/* Bottom Navigation */}
+        <div className="fixed bottom-6 left-4 right-4 z-50">
+          <div className="bg-black rounded-full py-4 px-6">
+            <div className="flex justify-between items-center">
+              {/* Dashboard */}
+              <Link to="/dashboard" className="flex flex-col items-center">
+                <Building2 className={`w-6 h-6 ${isActive('/dashboard') ? 'text-white' : 'text-gray-400'}`} />
+                <span className={`text-xs mt-1 ${isActive('/dashboard') ? 'text-white' : 'text-gray-400'}`}>Dash</span>
+              </Link>
+
+              {/* Properties */}
+              <Link to="/" className="flex flex-col items-center">
+                <Building2 className={`w-6 h-6 ${isActive('/') ? 'text-white' : 'text-gray-400'}`} />
+                <span className={`text-xs mt-1 ${isActive('/') ? 'text-white' : 'text-gray-400'}`}>Property's</span>
+              </Link>
+
+              {/* Quotes */}
+              <Link to="/documents" className="flex flex-col items-center">
+                <MessageSquareQuote className={`w-6 h-6 ${isActive('/documents') ? 'text-white' : 'text-gray-400'}`} />
+                <span className={`text-xs mt-1 ${isActive('/documents') ? 'text-white' : 'text-gray-400'}`}>Quotes</span>
+              </Link>
+
+              {/* More */}
+              <Link to="/more" className="flex flex-col items-center">
+                <Menu className={`w-6 h-6 ${isActive('/more') ? 'text-white' : 'text-gray-400'}`} />
+                <span className={`text-xs mt-1 ${isActive('/more') ? 'text-white' : 'text-gray-400'}`}>More</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  // Desktop Navigation (keep existing code)
   return (
     <>
       <SearchOverlay 
