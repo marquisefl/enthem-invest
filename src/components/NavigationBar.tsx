@@ -23,7 +23,7 @@ const NavigationBar = () => {
         />
         
         {/* Top Header */}
-        <div className="fixed top-0 left-0 right-0 z-50 px-4 py-3 flex justify-between items-center bg-white">
+        <div className="px-4 py-3 flex justify-between items-center">
           {/* Logo */}
           <Link to="/dashboard" className="block">
             <div className="w-10 h-10 relative cursor-pointer">
@@ -42,7 +42,7 @@ const NavigationBar = () => {
 
         {/* Bottom Navigation */}
         <div className="fixed bottom-6 left-4 right-4 z-50">
-          <div className="bg-black rounded-full py-4 px-6">
+          <div className="bg-black rounded-lg py-4 px-6">
             <div className="flex justify-between items-center">
               {/* Dashboard */}
               <Link to="/dashboard" className="flex flex-col items-center">
@@ -74,7 +74,6 @@ const NavigationBar = () => {
     );
   }
 
-  // Desktop Navigation (keep existing code)
   return (
     <>
       <SearchOverlay 
@@ -226,3 +225,15 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
+
+import NavigationBar from "@/components/NavigationBar";
+
+const Index = () => {
+  return (
+    <div className="min-h-screen">
+      <NavigationBar />
+    </div>
+  );
+};
+
+export default Index;
