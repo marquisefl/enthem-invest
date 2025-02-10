@@ -12,10 +12,10 @@ const Greeting = ({ userName = "Marquise" }: { userName?: string }) => {
 
   return (
     <div className="w-full sm:w-[370px] h-[88px] flex flex-col justify-center items-start">
-      <span className="text-2xl sm:text-[42px] text-[#a6a6a6] font-medium font-['Poppins']">
+      <span className="text-2xl sm:text-[42px] leading-tight text-[#a6a6a6] font-medium font-['Poppins']">
         {greeting},
       </span>
-      <span className="text-2xl sm:text-[42px] text-[#3f3f3f] font-medium font-['Poppins']">
+      <span className="text-2xl sm:text-[42px] leading-tight text-[#3f3f3f] font-medium font-['Poppins']">
         {userName}
       </span>
     </div>

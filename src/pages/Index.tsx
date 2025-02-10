@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <NavigationBar />
-      <div className="p-6 sm:p-8">
+      <div className="p-6 sm:p-8 relative z-10">
         {!isMobile && (
           <div className="mt-6">
             <Header />
