@@ -1,5 +1,5 @@
 
-import { Search, Grid2X2, Home, FileText, Book, Bell, Settings } from "lucide-react";
+import { Search, Grid2X2, Building2, FileText, Book, Bell, Settings } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -40,7 +40,7 @@ const NavigationBar = () => {
 
         {/* Main Navigation */}
         <div className="space-y-8 px-6">
-          {/* Grid */}
+          {/* Dashboard (Home) */}
           <Tooltip delayDuration={1000}>
             <TooltipTrigger asChild>
               <Link to="/dashboard" className="relative block">
@@ -57,12 +57,12 @@ const NavigationBar = () => {
             </TooltipContent>
           </Tooltip>
 
-          {/* Home */}
+          {/* Properties */}
           <Tooltip delayDuration={1000}>
             <TooltipTrigger asChild>
               <Link to="/" className="relative block">
                 <button className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-white/10 ${isActive('/') ? 'bg-white/10' : ''}`}>
-                  <Home className={`w-6 h-6 transition-colors duration-300 ${isActive('/') ? 'text-white' : 'text-[#9CA3AF] hover:text-white'}`} />
+                  <Building2 className={`w-6 h-6 transition-colors duration-300 ${isActive('/') ? 'text-white' : 'text-[#9CA3AF] hover:text-white'}`} />
                 </button>
                 {isActive('/') && (
                   <div className="w-1 h-1 absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-[#2cff3a] rounded-full" />
@@ -70,7 +70,7 @@ const NavigationBar = () => {
               </Link>
             </TooltipTrigger>
             <TooltipContent side="right" className="bg-black text-white border-none">
-              <p className="font-inter">Home</p>
+              <p className="font-inter">Properties</p>
             </TooltipContent>
           </Tooltip>
 
