@@ -1,5 +1,5 @@
 
-import { Search, Grid2X2, Building2, FileText, Book, Bell, Settings } from "lucide-react";
+import { Search, Grid2X2, Building2, MessageSquareQuote, Users, Bell, Settings } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -74,12 +74,12 @@ const NavigationBar = () => {
             </TooltipContent>
           </Tooltip>
 
-          {/* File */}
+          {/* Quotes Request */}
           <Tooltip delayDuration={1000}>
             <TooltipTrigger asChild>
               <Link to="/documents" className="relative block">
                 <button className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-white/10 ${isActive('/documents') ? 'bg-white/10' : ''}`}>
-                  <FileText className={`w-6 h-6 transition-colors duration-300 ${isActive('/documents') ? 'text-white' : 'text-[#9CA3AF] hover:text-white'}`} />
+                  <MessageSquareQuote className={`w-6 h-6 transition-colors duration-300 ${isActive('/documents') ? 'text-white' : 'text-[#9CA3AF] hover:text-white'}`} />
                 </button>
                 {isActive('/documents') && (
                   <div className="w-1 h-1 absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-[#2cff3a] rounded-full" />
@@ -87,16 +87,16 @@ const NavigationBar = () => {
               </Link>
             </TooltipTrigger>
             <TooltipContent side="right" className="bg-black text-white border-none">
-              <p className="font-inter">Documents</p>
+              <p className="font-inter">Quotes Request</p>
             </TooltipContent>
           </Tooltip>
 
-          {/* Book */}
+          {/* Contacts */}
           <Tooltip delayDuration={1000}>
             <TooltipTrigger asChild>
               <Link to="/resources" className="relative block">
                 <button className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-white/10 ${isActive('/resources') ? 'bg-white/10' : ''}`}>
-                  <Book className={`w-6 h-6 transition-colors duration-300 ${isActive('/resources') ? 'text-white' : 'text-[#9CA3AF] hover:text-white'}`} />
+                  <Users className={`w-6 h-6 transition-colors duration-300 ${isActive('/resources') ? 'text-white' : 'text-[#9CA3AF] hover:text-white'}`} />
                 </button>
                 {isActive('/resources') && (
                   <div className="w-1 h-1 absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-[#2cff3a] rounded-full" />
@@ -104,7 +104,7 @@ const NavigationBar = () => {
               </Link>
             </TooltipTrigger>
             <TooltipContent side="right" className="bg-black text-white border-none">
-              <p className="font-inter">Resources</p>
+              <p className="font-inter">Contacts</p>
             </TooltipContent>
           </Tooltip>
         </div>
