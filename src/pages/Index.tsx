@@ -1,11 +1,12 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import NavigationBar from "@/components/NavigationBar";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-900 dark:to-black">
+      <NavigationBar />
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold text-center mt-20">Welcome to Your App</h1>
       </div>
     </div>
   );
