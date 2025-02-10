@@ -11,7 +11,7 @@ const Greeting = ({ userName = "Marquise" }: { userName?: string }) => {
   }, []);
 
   return (
-    <div className="w-[370px] h-[88px] flex flex-col justify-center">
+    <div className="w-[370px] h-[88px] flex flex-col justify-center items-start">
       <span className="text-[#a6a6a6] text-3xl font-medium font-['Poppins']">
         {greeting},
       </span>
