@@ -31,7 +31,7 @@ const NavigationBar = () => {
         <div className="mx-3 mb-6 border-t border-[#374151]" />
 
         {/* Main Navigation */}
-        <div className="space-y-4 px-6">
+        <div className="space-y-8 px-6">
           {/* Grid */}
           <Link to="/dashboard" className="relative block">
             <button className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-white/10 ${isActive('/dashboard') ? 'bg-white/10' : ''}`}>
