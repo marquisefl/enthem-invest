@@ -34,18 +34,18 @@ const Dashboard = () => {
             </div>
           ) : (
             // Desktop Layout - Fluid Grid with 24px gap
-            <div className="flex flex-col gap-6 w-full">
-              <Greeting />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-                <div className="md:col-span-1">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+              <div className="md:col-span-1">
+                <div className="flex flex-col gap-6">
+                  <Greeting />
                   <DashRecentTrans />
                 </div>
-                <div className="md:col-span-1">
-                  <DashPropCards />
-                </div>
-                <div className="md:col-span-1">
-                  <CatSpendCard />
-                </div>
+              </div>
+              <div className="md:col-span-1">
+                <DashPropCards />
+              </div>
+              <div className="md:col-span-1">
+                <CatSpendCard />
               </div>
             </div>
           )}
