@@ -33,7 +33,7 @@ const DashRecentTrans: React.FC<DashRecentTransProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-6 h-full w-full box-border">
+    <div className="flex flex-col gap-3 h-full w-full box-border">
       {transactions.map((transaction, index) => (
         <div key={index} className="w-full bg-white rounded-lg h-[72px] flex items-center px-5">
           <div className="flex-1 flex justify-between items-center">
@@ -48,7 +48,7 @@ const DashRecentTrans: React.FC<DashRecentTransProps> = ({
                 </span>
               </div>
             </div>
-            <div className={`min-w-[60px] text-center px-2.5 py-0.5 rounded-full ${getStatusStyle(transaction.status)}`}>
+            <div className={`px-2.5 py-0.5 rounded-full ${getStatusStyle(transaction.status)}`}>
               <span className="text-xs font-medium">
                 {transaction.status}
               </span>
