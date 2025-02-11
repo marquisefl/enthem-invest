@@ -85,7 +85,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
 
 const DashPropCards = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-6">
       <PropertyCard
         propertyName="Eagle Dr"
         currentBudget={22950}
