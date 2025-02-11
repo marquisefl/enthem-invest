@@ -33,22 +33,27 @@ const Dashboard = () => {
               </div>
             </div>
           ) : (
-            // Desktop Layout - Fluid Grid with 24px gap and matching heights
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+            // Desktop Layout - Responsive Grid
+            <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6 w-full">
+              {/* Left Column - Greeting & Transactions */}
               <div className="md:col-span-1 h-full">
                 <div className="flex flex-col gap-6 h-full">
                   <div className="flex-none">
                     <Greeting />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-h-[500px]">
                     <DashRecentTrans />
                   </div>
                 </div>
               </div>
-              <div className="md:col-span-1 h-full">
+
+              {/* Middle Column - Property Cards */}
+              <div className="md:col-span-1 h-full min-h-[500px] flex flex-col">
                 <DashPropCards />
               </div>
-              <div className="md:col-span-1 h-full">
+
+              {/* Right Column - Spending Overview */}
+              <div className="md:col-span-2 lg:col-span-1 h-full min-h-[500px] flex flex-col">
                 <CatSpendCard />
               </div>
             </div>
