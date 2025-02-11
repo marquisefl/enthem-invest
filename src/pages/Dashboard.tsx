@@ -19,25 +19,48 @@ const Dashboard = () => {
             <Header />
           </div>
         )}
-        <div className="mt-6 sm:mt-10 flex items-start gap-4">
-          <div className="flex flex-col gap-[64px]">
-            <Greeting />
-            <DashRecentTrans />
-          </div>
-          <div className="flex flex-col gap-2">
-            <DashPropCardBlack
-              propertyName="Eagle Dr"
-              currentBudget={22950}
-              totalBudget={40000}
-              isActive={true}
-            />
-            <DashPropCardWhite
-              propertyName="Highway Ln"
-              currentBudget={25110}
-              totalBudget={20000}
-              isActive={true}
-            />
-          </div>
+        <div className="mt-6 sm:mt-10">
+          {isMobile ? (
+            // Mobile Layout
+            <div className="flex flex-col gap-4">
+              <Greeting />
+              <DashPropCardBlack
+                propertyName="Eagle Dr"
+                currentBudget={22950}
+                totalBudget={40000}
+                isActive={true}
+              />
+              <DashPropCardWhite
+                propertyName="Highway Ln"
+                currentBudget={25110}
+                totalBudget={20000}
+                isActive={true}
+              />
+              <DashRecentTrans />
+            </div>
+          ) : (
+            // Desktop Layout
+            <div className="flex items-start gap-4">
+              <div className="flex flex-col gap-[64px]">
+                <Greeting />
+                <DashRecentTrans />
+              </div>
+              <div className="flex flex-col gap-2">
+                <DashPropCardBlack
+                  propertyName="Eagle Dr"
+                  currentBudget={22950}
+                  totalBudget={40000}
+                  isActive={true}
+                />
+                <DashPropCardWhite
+                  propertyName="Highway Ln"
+                  currentBudget={25110}
+                  totalBudget={20000}
+                  isActive={true}
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -45,3 +68,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

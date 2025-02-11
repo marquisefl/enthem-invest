@@ -11,7 +11,7 @@ const NavigationBar = () => {
   const isMobile = useIsMobile();
 
   const isActive = (path: string) => {
-    return location.pathname === path;
+    return location.pathname === path || (path === '/dashboard' && location.pathname === '/');
   };
 
   if (isMobile) {
