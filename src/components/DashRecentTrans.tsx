@@ -32,23 +32,23 @@ const DashRecentTrans: React.FC<DashRecentTransProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-2 w-full max-w-[497px]">
+    <div className="flex flex-col gap-3">
       {transactions.map((transaction, index) => (
-        <div key={index} className="w-full bg-white rounded-lg h-20 flex items-center px-6">
+        <div key={index} className="w-full bg-white rounded-lg h-[72px] flex items-center px-5">
           <div className="flex-1 flex justify-between items-center">
             <div className="flex flex-col items-start">
-              <div className="text-black text-base font-medium font-poppins">
+              <div className="text-black text-sm font-medium font-poppins mb-0.5">
                 {transaction.type}
               </div>
               <div>
-                <span className="text-[#3f3f3f] text-sm font-medium font-poppins">Amount: </span>
-                <span className="text-[#919191] text-sm font-medium font-poppins">
+                <span className="text-[#3f3f3f] text-xs font-medium font-poppins">Amount: </span>
+                <span className="text-[#919191] text-xs font-medium font-poppins">
                   ${transaction.amount.toFixed(2)}
                 </span>
               </div>
             </div>
-            <div className={`px-3 py-1 rounded-full ${getStatusStyle(transaction.status)}`}>
-              <span className="text-sm font-medium">
+            <div className={`px-2.5 py-0.5 rounded-full ${getStatusStyle(transaction.status)}`}>
+              <span className="text-xs font-medium">
                 {transaction.status}
               </span>
             </div>

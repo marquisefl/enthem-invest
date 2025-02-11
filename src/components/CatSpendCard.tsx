@@ -18,46 +18,46 @@ const CatSpendCard = () => {
   ];
 
   return (
-    <div className="w-full bg-white rounded-[20px] px-6 py-6">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-semibold text-black">
+    <div className="w-full bg-white rounded-[20px] px-5 py-5">
+      <div className="flex items-center justify-between mb-8">
+        <h2 className="text-base font-semibold text-black">
           Spending Overview
         </h2>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           <button
             onClick={() => setTimeFrame('month')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full ${
               timeFrame === 'month'
-                ? 'bg-white shadow-md'
+                ? 'bg-white shadow-sm'
                 : 'bg-gray-100'
             }`}
           >
             <div
-              className={`w-3 h-3 rounded-full ${
+              className={`w-2 h-2 rounded-full ${
                 timeFrame === 'month' ? 'bg-[#3578f6]' : 'bg-gray-300'
               }`}
             />
-            <span className="text-sm">Last 30 days</span>
+            <span className="text-xs">Last 30 days</span>
           </button>
           <button
             onClick={() => setTimeFrame('week')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full ${
               timeFrame === 'week'
-                ? 'bg-white shadow-md'
+                ? 'bg-white shadow-sm'
                 : 'bg-gray-100'
             }`}
           >
             <div
-              className={`w-3 h-3 rounded-full ${
+              className={`w-2 h-2 rounded-full ${
                 timeFrame === 'week' ? 'bg-[#3578f6]' : 'bg-gray-300'
               }`}
             />
-            <span className="text-sm">This Week</span>
+            <span className="text-xs">This Week</span>
           </button>
         </div>
       </div>
 
-      <div className="flex items-end justify-between mt-16">
+      <div className="flex items-end justify-between px-4">
         {categories.map((category) => (
           <div
             key={category.name}
@@ -65,13 +65,13 @@ const CatSpendCard = () => {
             style={{ color: category.color }}
           >
             <div
-              className="w-24 rounded-lg transition-all duration-300"
+              className="w-16 rounded-lg transition-all duration-300"
               style={{
                 backgroundColor: category.color,
                 height: `${category.amount}px`,
               }}
             />
-            <span className="text-sm">{category.name}</span>
+            <span className="text-xs">{category.name}</span>
           </div>
         ))}
       </div>
