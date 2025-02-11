@@ -1,7 +1,6 @@
 
 import NavigationBar from "@/components/NavigationBar";
 import Greeting from "@/components/Greeting";
-import Header from "@/components/Header";
 import DashPropCards from "@/components/DashPropCards";
 import DashRecentTrans from "@/components/DashRecentTrans";
 import CatSpendCard from "@/components/CatSpendCard";
@@ -15,11 +14,6 @@ const Dashboard = () => {
     <div className="min-h-screen w-full">
       <NavigationBar />
       <div className="p-4 sm:p-6 sm:pl-32 relative z-10 w-full max-w-[100vw] box-border">
-        {!isMobile && (
-          <div className="mt-6">
-            <Header />
-          </div>
-        )}
         <div className="mt-6 sm:mt-10 w-full">
           {isMobile ? (
             // Mobile Layout
