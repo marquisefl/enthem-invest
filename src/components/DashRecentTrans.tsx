@@ -16,6 +16,7 @@ const DashRecentTrans: React.FC<DashRecentTransProps> = ({
     { type: 'Receipt', amount: 350.34, status: 'Paid' },
     { type: 'Invoice', amount: 890.00, status: 'Due' },
     { type: 'Receipt', amount: 1250.00, status: 'Overdue' },
+    { type: 'Invoice', amount: 475.50, status: 'Due' },
   ]
 }) => {
   const getStatusStyle = (status: Transaction['status']) => {
