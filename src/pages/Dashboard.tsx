@@ -20,7 +20,7 @@ const Dashboard = () => {
           </div>
         )}
         <div className="mt-6 sm:mt-10 flex items-start gap-4">
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-14">
             <Greeting />
             <DashRecentTrans />
           </div>
