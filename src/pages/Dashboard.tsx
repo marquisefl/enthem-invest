@@ -47,7 +47,7 @@ const Dashboard = () => {
           ) : (
             // Desktop Layout
             <div className="flex items-start gap-4 w-full">
-              <div className="flex flex-col gap-[64px] flex-1">
+              <div className="flex flex-col gap-14 flex-1">
                 <Greeting />
                 <DashRecentTrans />
               </div>
