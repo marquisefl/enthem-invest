@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import DashPropCards from "@/components/DashPropCards";
 import DashRecentTrans from "@/components/DashRecentTrans";
 import CatSpendCard from "@/components/CatSpendCard";
+import DealAnalyzer from "@/components/DealAnalyzer";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Dashboard = () => {
@@ -31,6 +32,9 @@ const Dashboard = () => {
               <div className="w-full">
                 <DashRecentTrans />
               </div>
+              <div className="w-full">
+                <DealAnalyzer />
+              </div>
             </div>
           ) : (
             // Desktop Layout - Responsive Grid
@@ -43,6 +47,9 @@ const Dashboard = () => {
                   </div>
                   <div className="flex-1 w-full">
                     <DashRecentTrans />
+                  </div>
+                  <div className="w-full">
+                    <DealAnalyzer />
                   </div>
                 </div>
               </div>
