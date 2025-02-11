@@ -49,22 +49,19 @@ const Dashboard = () => {
               </div>
             </div>
           ) : (
-            // Desktop Layout
-            <div className="flex flex-col lg:flex-row items-start gap-6 w-full">
-              <div className="w-full lg:w-[45%] order-2 lg:order-1">
-                <Greeting />
-                <div className="mt-8 lg:mt-12">
-                  <DashRecentTrans />
-                </div>
-              </div>
-              <div className="w-full lg:w-[55%] flex flex-col gap-4 order-1 lg:order-2">
-                <div className="flex flex-col gap-4">
+            // Desktop Layout - Fluid Grid
+            <div className="flex flex-col gap-6 w-full">
+              <Greeting />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min">
+                <div className="md:col-span-1">
                   <DashPropCardBlack
                     propertyName="Eagle Dr"
                     currentBudget={22950}
                     totalBudget={40000}
                     isActive={true}
                   />
+                </div>
+                <div className="md:col-span-1">
                   <DashPropCardWhite
                     propertyName="Highway Ln"
                     currentBudget={25110}
@@ -72,7 +69,12 @@ const Dashboard = () => {
                     isActive={true}
                   />
                 </div>
-                <CatSpendCard />
+                <div className="md:col-span-1">
+                  <DashRecentTrans />
+                </div>
+                <div className="md:col-span-2 lg:col-span-3">
+                  <CatSpendCard />
+                </div>
               </div>
             </div>
           )}
