@@ -43,7 +43,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   const isBlack = variant === 'black';
 
   return (
-    <div className={`w-full ${isBlack ? 'bg-black' : 'bg-white'} rounded-[20px] p-5`}>
+    <div className={`w-full h-full ${isBlack ? 'bg-black' : 'bg-white'} rounded-[20px] p-5 box-border`}>
       <div className="flex justify-between items-center mb-10">
         <div className="text-base font-medium text-[#838383]">
           {propertyName}
@@ -85,7 +85,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
 
 const DashPropCards = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 h-full box-border">
       <PropertyCard
         propertyName="Eagle Dr"
         currentBudget={22950}

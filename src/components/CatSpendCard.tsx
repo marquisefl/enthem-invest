@@ -18,7 +18,7 @@ const CatSpendCard = () => {
   ];
 
   return (
-    <div className="w-full h-full bg-white rounded-[20px] px-5 py-5 flex flex-col justify-between">
+    <div className="w-full h-full bg-white rounded-[20px] px-5 py-5 box-border flex flex-col justify-between">
       <div className="flex items-center justify-between w-full">
         <h2 className="text-base font-semibold text-black">
           Spending Overview

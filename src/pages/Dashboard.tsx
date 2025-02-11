@@ -14,7 +14,7 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen w-full">
       <NavigationBar />
-      <div className="p-4 sm:p-6 sm:pl-32 relative z-10 w-full max-w-[100vw]">
+      <div className="p-4 sm:p-6 sm:pl-32 relative z-10 w-full max-w-[100vw] box-border">
         {!isMobile && (
           <div className="mt-6">
             <Header />
@@ -38,11 +38,11 @@ const Dashboard = () => {
             </div>
           ) : (
             // Desktop Layout - Two Row Grid
-            <div className="flex flex-col gap-6 w-full">
+            <div className="flex flex-col gap-6 w-full box-border">
               {/* First Row */}
-              <div className="grid grid-cols-12 gap-6 w-full items-stretch">
+              <div className="grid grid-cols-12 gap-6 w-full h-[432px] items-stretch box-border">
                 {/* Left Column - Greeting & Transactions */}
-                <div className="col-span-4 h-[432px] flex flex-col">
+                <div className="col-span-4 flex flex-col box-border">
                   <div className="flex-none">
                     <Greeting />
                   </div>
@@ -52,12 +52,12 @@ const Dashboard = () => {
                 </div>
 
                 {/* Middle Column - Property Cards */}
-                <div className="col-span-3 h-[432px]">
+                <div className="col-span-3">
                   <DashPropCards />
                 </div>
 
                 {/* Right Column - Spending Overview */}
-                <div className="col-span-5 h-[432px]">
+                <div className="col-span-5">
                   <CatSpendCard />
                 </div>
               </div>
