@@ -41,20 +41,22 @@ const Dashboard = () => {
                   <div className="flex-none">
                     <Greeting />
                   </div>
-                  <div className="flex-1 min-h-[500px]">
+                  <div className="flex-1">
                     <DashRecentTrans />
                   </div>
                 </div>
               </div>
 
               {/* Middle Column - Property Cards */}
-              <div className="md:col-span-1 h-full min-h-[500px] flex flex-col">
+              <div className="md:col-span-1 h-full">
                 <DashPropCards />
               </div>
 
               {/* Right Column - Spending Overview */}
-              <div className="md:col-span-2 lg:col-span-1 h-full min-h-[500px] flex flex-col">
-                <CatSpendCard />
+              <div className="md:col-span-2 lg:col-span-1 h-full">
+                <div className="h-full">
+                  <CatSpendCard />
+                </div>
               </div>
             </div>
           )}
