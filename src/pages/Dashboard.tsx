@@ -36,14 +36,12 @@ const Dashboard = () => {
             // Desktop Layout - Responsive Grid
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6 w-full">
               {/* Left Column - Greeting & Transactions */}
-              <div className="md:col-span-1 h-full">
-                <div className="flex flex-col gap-6 h-full">
-                  <div className="flex-none">
-                    <Greeting />
-                  </div>
-                  <div className="flex-1">
-                    <DashRecentTrans />
-                  </div>
+              <div className="md:col-span-1 flex flex-col gap-6 h-full">
+                <div className="bg-white rounded-[20px] p-5">
+                  <Greeting />
+                </div>
+                <div className="flex-1">
+                  <DashRecentTrans />
                 </div>
               </div>
 
@@ -54,9 +52,7 @@ const Dashboard = () => {
 
               {/* Right Column - Spending Overview */}
               <div className="md:col-span-2 lg:col-span-1 h-full">
-                <div className="h-full">
-                  <CatSpendCard />
-                </div>
+                <CatSpendCard />
               </div>
             </div>
           )}
