@@ -40,11 +40,13 @@ const Dashboard = () => {
             // Desktop Layout - Two Row Grid
             <div className="flex flex-col gap-6 w-full">
               {/* First Row */}
-              <div className="grid grid-cols-12 gap-6 w-full">
+              <div className="grid grid-cols-12 gap-6 w-full items-stretch">
                 {/* Left Column - Greeting & Transactions */}
-                <div className="col-span-4 h-[432px]">
-                  <div className="flex flex-col justify-between items-start h-full">
+                <div className="col-span-4 h-[432px] flex flex-col">
+                  <div className="flex-none">
                     <Greeting />
+                  </div>
+                  <div className="flex-1 overflow-hidden mt-6">
                     <DashRecentTrans />
                   </div>
                 </div>
