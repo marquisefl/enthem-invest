@@ -40,26 +40,26 @@ const Dashboard = () => {
             // Desktop Layout - Two Row Grid
             <div className="flex flex-col gap-6 w-full">
               {/* First Row */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-6 w-full">
+              <div className="grid grid-cols-12 gap-6 w-full">
                 {/* Left Column - Greeting & Transactions */}
-                <div className="md:col-span-1 lg:col-span-4 h-[432px]">
-                  <div className="flex flex-col justify-between items-start h-full">
-                    <div className="flex-none">
+                <div className="col-span-4 h-[432px]">
+                  <div className="flex flex-col h-full">
+                    <div className="flex-none mb-6">
                       <Greeting />
                     </div>
-                    <div className="flex-1 w-full">
+                    <div className="flex-1">
                       <DashRecentTrans />
                     </div>
                   </div>
                 </div>
 
                 {/* Middle Column - Property Cards */}
-                <div className="md:col-span-1 lg:col-span-3 h-[432px]">
+                <div className="col-span-3 h-[432px]">
                   <DashPropCards />
                 </div>
 
                 {/* Right Column - Spending Overview */}
-                <div className="md:col-span-2 lg:col-span-5 h-[432px]">
+                <div className="col-span-5 h-[432px]">
                   <CatSpendCard />
                 </div>
               </div>
