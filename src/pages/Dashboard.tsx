@@ -11,9 +11,9 @@ const Dashboard = () => {
   const isMobile = useIsMobile();
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full">
       <NavigationBar />
-      <div className="p-6 sm:pl-32 relative z-10">
+      <div className="p-4 sm:p-6 sm:pl-32 relative z-10 max-w-full">
         {!isMobile && (
           <div className="mt-6">
             <Header />
@@ -22,21 +22,27 @@ const Dashboard = () => {
         <div className="mt-6 sm:mt-10">
           {isMobile ? (
             // Mobile Layout
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 w-full max-w-[calc(100vw-2rem)]">
               <Greeting />
-              <DashPropCardBlack
-                propertyName="Eagle Dr"
-                currentBudget={22950}
-                totalBudget={40000}
-                isActive={true}
-              />
-              <DashPropCardWhite
-                propertyName="Highway Ln"
-                currentBudget={25110}
-                totalBudget={20000}
-                isActive={true}
-              />
-              <DashRecentTrans />
+              <div className="w-full max-w-full overflow-hidden">
+                <DashPropCardBlack
+                  propertyName="Eagle Dr"
+                  currentBudget={22950}
+                  totalBudget={40000}
+                  isActive={true}
+                />
+              </div>
+              <div className="w-full max-w-full overflow-hidden">
+                <DashPropCardWhite
+                  propertyName="Highway Ln"
+                  currentBudget={25110}
+                  totalBudget={20000}
+                  isActive={true}
+                />
+              </div>
+              <div className="w-full max-w-full overflow-hidden">
+                <DashRecentTrans />
+              </div>
             </div>
           ) : (
             // Desktop Layout
@@ -68,4 +74,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
