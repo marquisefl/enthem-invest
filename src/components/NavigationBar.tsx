@@ -50,26 +50,46 @@ const NavigationBar = () => {
             <div className="flex justify-between items-center">
               {/* Dashboard */}
               <Link to="/dashboard" className="flex flex-col items-center">
-                <Grid2X2 className={`w-6 h-6 ${isActive('/dashboard') ? 'text-white' : 'text-gray-400'}`} />
-                <span className={`text-xs mt-1 ${isActive('/dashboard') ? 'text-white' : 'text-gray-400'}`}>Dash</span>
+                <div className={`flex flex-col items-center ${isActive('/dashboard') ? 'text-white' : 'text-gray-400'}`}>
+                  <Grid2X2 className="w-6 h-6 mb-1" />
+                  <span className="text-xs">Dash</span>
+                  {isActive('/dashboard') && (
+                    <div className="w-1 h-1 bg-[#2cff3a] rounded-full mt-1" />
+                  )}
+                </div>
               </Link>
 
               {/* Properties */}
               <Link to="/" className="flex flex-col items-center">
-                <Building2 className={`w-6 h-6 ${isActive('/') ? 'text-white' : 'text-gray-400'}`} />
-                <span className={`text-xs mt-1 ${isActive('/') ? 'text-white' : 'text-gray-400'}`}>Property's</span>
+                <div className={`flex flex-col items-center ${isActive('/') ? 'text-white' : 'text-gray-400'}`}>
+                  <Building2 className="w-6 h-6 mb-1" />
+                  <span className="text-xs">Properties</span>
+                  {isActive('/') && (
+                    <div className="w-1 h-1 bg-[#2cff3a] rounded-full mt-1" />
+                  )}
+                </div>
               </Link>
 
               {/* Quotes */}
               <Link to="/documents" className="flex flex-col items-center">
-                <MessageSquareQuote className={`w-6 h-6 ${isActive('/documents') ? 'text-white' : 'text-gray-400'}`} />
-                <span className={`text-xs mt-1 ${isActive('/documents') ? 'text-white' : 'text-gray-400'}`}>Quotes</span>
+                <div className={`flex flex-col items-center ${isActive('/documents') ? 'text-white' : 'text-gray-400'}`}>
+                  <MessageSquareQuote className="w-6 h-6 mb-1" />
+                  <span className="text-xs">Quotes</span>
+                  {isActive('/documents') && (
+                    <div className="w-1 h-1 bg-[#2cff3a] rounded-full mt-1" />
+                  )}
+                </div>
               </Link>
 
               {/* More */}
               <Link to="/more" className="flex flex-col items-center">
-                <Menu className={`w-6 h-6 ${isActive('/more') ? 'text-white' : 'text-gray-400'}`} />
-                <span className={`text-xs mt-1 ${isActive('/more') ? 'text-white' : 'text-gray-400'}`}>More</span>
+                <div className={`flex flex-col items-center ${isActive('/more') ? 'text-white' : 'text-gray-400'}`}>
+                  <Menu className="w-6 h-6 mb-1" />
+                  <span className="text-xs">More</span>
+                  {isActive('/more') && (
+                    <div className="w-1 h-1 bg-[#2cff3a] rounded-full mt-1" />
+                  )}
+                </div>
               </Link>
             </div>
           </div>
