@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import DashPropCardBlack from "@/components/DashPropCardBlack";
 import DashPropCardWhite from "@/components/DashPropCardWhite";
 import DashRecentTrans from "@/components/DashRecentTrans";
+import CatSpendCard from "@/components/CatSpendCard";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Dashboard = () => {
@@ -41,6 +42,9 @@ const Dashboard = () => {
                 />
               </div>
               <div className="w-full">
+                <CatSpendCard />
+              </div>
+              <div className="w-full">
                 <DashRecentTrans />
               </div>
             </div>
@@ -64,6 +68,7 @@ const Dashboard = () => {
                   totalBudget={20000}
                   isActive={true}
                 />
+                <CatSpendCard />
               </div>
             </div>
           )}
