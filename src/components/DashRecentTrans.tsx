@@ -21,18 +21,18 @@ const DashRecentTrans: React.FC<DashRecentTransProps> = ({
   const getStatusStyle = (status: Transaction['status']) => {
     switch (status) {
       case 'Paid':
-        return 'bg-[#3578f6]/20 text-[#3578f6]';
+        return 'bg-blue-100 text-blue-500';
       case 'Due':
-        return 'bg-yellow-100 text-yellow-600';
+        return 'bg-gray-100 text-gray-600';
       case 'Overdue':
-        return 'bg-red-100 text-red-600';
+        return 'bg-red-50 text-red-400';
       default:
         return '';
     }
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-2">
       {transactions.map((transaction, index) => (
         <div key={index} className="w-[368px] h-20 relative">
           <div className="w-[368px] h-20 left-0 top-0 absolute bg-white rounded-lg" />
