@@ -55,13 +55,13 @@ const Dashboard = () => {
               </div>
 
               {/* Middle Column - Property Cards */}
-              <div className="md:col-span-1 lg:col-span-3 h-full">
+              <div className="md:col-span-1 lg:col-span-3">
                 <DashPropCards />
               </div>
 
               {/* Right Column - Spending Overview */}
-              <div className="md:col-span-2 lg:col-span-5 h-full">
-                <div className="h-full">
+              <div className="md:col-span-2 lg:col-span-5">
+                <div className="h-[calc(100%_-_1px)]">
                   <CatSpendCard />
                 </div>
               </div>
