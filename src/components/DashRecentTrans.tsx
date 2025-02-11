@@ -32,7 +32,7 @@ const DashRecentTrans: React.FC<DashRecentTransProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-2 w-full">
+    <div className="flex flex-col gap-2 w-full max-w-[497px]">
       {transactions.map((transaction, index) => (
         <div key={index} className="w-full bg-white rounded-lg h-20 flex items-center px-6">
           <div className="flex-1 flex justify-between items-center">
