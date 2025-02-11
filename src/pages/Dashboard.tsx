@@ -61,7 +61,7 @@ const Dashboard = () => {
 
               {/* Right Column - Spending Overview */}
               <div className="md:col-span-2 lg:col-span-5">
-                <div className="h-[calc(100%_-_1px)]">
+                <div className="max-h-[424px]">
                   <CatSpendCard />
                 </div>
               </div>
