@@ -38,7 +38,7 @@ const Dashboard = () => {
             </div>
           ) : (
             // Desktop Layout - Two Row Grid
-            <div className="flex flex-col gap-6 w-full box-border">
+            <div className="flex flex-col gap-10 w-full box-border">
               {/* First Row */}
               <div className="grid grid-cols-12 gap-6 w-full h-[432px] items-stretch box-border">
                 {/* Left Column - Greeting & Transactions */}
