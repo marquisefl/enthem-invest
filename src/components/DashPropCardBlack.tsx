@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Progress } from "@/components/ui/progress";
 
 interface DashPropCardBlackProps {
@@ -15,9 +15,17 @@ const DashPropCardBlack: React.FC<DashPropCardBlackProps> = ({
   totalBudget,
   isActive = true,
 }) => {
+  const [progress, setProgress] = useState(0);
   const budgetPercentage = (currentBudget / totalBudget) * 100;
   const isBudgetExceeded = currentBudget > totalBudget;
   const progressColor = isBudgetExceeded ? '#ec5936' : '#2CFF3A';
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setProgress(budgetPercentage);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [budgetPercentage]);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -64,7 +72,7 @@ const DashPropCardBlack: React.FC<DashPropCardBlackProps> = ({
               <div 
                 className="h-1 left-0 top-0 absolute rounded-[100px] transition-all duration-300"
                 style={{
-                  width: `${Math.min(budgetPercentage, 100)}%`,
+                  width: `${Math.min(progress, 100)}%`,
                   backgroundColor: progressColor
                 }}
               />
