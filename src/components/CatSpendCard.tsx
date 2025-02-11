@@ -18,64 +18,62 @@ const CatSpendCard = () => {
   ];
 
   return (
-    <div className="w-full bg-white rounded-[20px] px-6 py-6 pb-10">
-      <div className="flex flex-col w-full">
-        <div className="flex items-center gap-10 flex-wrap">
-          <h2 className="text-xl font-semibold font-poppins text-black flex-grow">
-            Spending Overview
-          </h2>
-          <div className="flex items-center gap-2 min-w-[240px] text-sm font-inter">
-            <button
-              onClick={() => setTimeFrame('month')}
-              className={`flex items-center gap-[11px] px-2 py-2 rounded-[100px] ${
-                timeFrame === 'month'
-                  ? 'bg-white shadow-[0px_5px_8px_rgba(0,0,0,0.1)]'
-                  : 'border border-[#DEE1E2]'
-              }`}
-            >
-              <div
-                className={`w-4 h-4 rounded-full ${
-                  timeFrame === 'month' ? 'bg-[#3578f6]' : 'bg-[#D9D9D9]'
-                }`}
-              />
-              <span>Last 30 days</span>
-            </button>
-            <button
-              onClick={() => setTimeFrame('week')}
-              className={`flex items-center gap-[11px] px-2 py-2 rounded-[100px] ${
-                timeFrame === 'week'
-                  ? 'bg-white shadow-[0px_5px_8px_rgba(0,0,0,0.1)]'
-                  : 'border border-[#DEE1E2]'
-              }`}
-            >
-              <div
-                className={`w-4 h-4 rounded-full ${
-                  timeFrame === 'week' ? 'bg-[#3578f6]' : 'bg-[#D9D9D9]'
-                }`}
-              />
-              <span>This Week</span>
-            </button>
-          </div>
-        </div>
-
-        <div className="flex items-end gap-[57px] mt-28 flex-wrap font-poppins text-sm">
-          {categories.map((category) => (
+    <div className="w-full bg-white rounded-[20px] px-6 py-6">
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-xl font-semibold text-black">
+          Spending Overview
+        </h2>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setTimeFrame('month')}
+            className={`flex items-center gap-2 px-4 py-2 rounded-full ${
+              timeFrame === 'month'
+                ? 'bg-white shadow-md'
+                : 'bg-gray-100'
+            }`}
+          >
             <div
-              key={category.name}
-              className="flex flex-col items-center flex-1 min-w-[63px] pt-0.5 pb-0.5"
-              style={{ color: category.color }}
-            >
-              <div
-                className="w-full rounded-lg"
-                style={{
-                  backgroundColor: category.color,
-                  height: `${category.amount}px`,
-                }}
-              />
-              <span className="mt-[10px]">{category.name}</span>
-            </div>
-          ))}
+              className={`w-3 h-3 rounded-full ${
+                timeFrame === 'month' ? 'bg-[#3578f6]' : 'bg-gray-300'
+              }`}
+            />
+            <span className="text-sm">Last 30 days</span>
+          </button>
+          <button
+            onClick={() => setTimeFrame('week')}
+            className={`flex items-center gap-2 px-4 py-2 rounded-full ${
+              timeFrame === 'week'
+                ? 'bg-white shadow-md'
+                : 'bg-gray-100'
+            }`}
+          >
+            <div
+              className={`w-3 h-3 rounded-full ${
+                timeFrame === 'week' ? 'bg-[#3578f6]' : 'bg-gray-300'
+              }`}
+            />
+            <span className="text-sm">This Week</span>
+          </button>
         </div>
+      </div>
+
+      <div className="flex items-end justify-between mt-16">
+        {categories.map((category) => (
+          <div
+            key={category.name}
+            className="flex flex-col items-center gap-2"
+            style={{ color: category.color }}
+          >
+            <div
+              className="w-24 rounded-lg transition-all duration-300"
+              style={{
+                backgroundColor: category.color,
+                height: `${category.amount}px`,
+              }}
+            />
+            <span className="text-sm">{category.name}</span>
+          </div>
+        ))}
       </div>
     </div>
   );

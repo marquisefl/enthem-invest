@@ -43,44 +43,40 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   const isBlack = variant === 'black';
 
   return (
-    <div className="w-[352px] h-[200px] relative">
-      <div className={`w-[352px] h-[200px] left-0 top-0 absolute ${isBlack ? 'bg-black' : 'bg-white'} rounded-[20px]`}>
-        <div className="w-[304px] h-[152px] left-[24px] top-[16px] absolute flex-col justify-start items-start gap-[52px] inline-flex">
-          <div className="self-stretch justify-between items-center inline-flex">
-            <div className="w-20 h-6 text-[#838383] text-lg font-semibold font-poppins">
-              {propertyName}
-            </div>
-            <div className={`w-[72px] h-6 px-2 py-px ${isBlack ? 'bg-white/20' : 'bg-black'} rounded-[18px] justify-center items-center gap-[5px] flex`}>
-              <div className={`w-1.5 h-1.5 ${isActive ? 'bg-[#2cff3a]' : 'bg-red-500'} rounded-full`} />
-              <div className={`w-11 ${isBlack ? 'text-white' : 'text-white'} text-sm font-medium font-poppins`}>
-                {isActive ? 'Active' : 'Inactive'}
-              </div>
-            </div>
+    <div className={`w-full ${isBlack ? 'bg-black' : 'bg-white'} rounded-[20px] p-6`}>
+      <div className="flex justify-between items-center mb-6">
+        <div className="text-lg font-medium text-[#838383]">
+          {propertyName}
+        </div>
+        <div className={`px-3 py-1 rounded-full flex items-center gap-1.5 ${
+          isBlack ? 'bg-white/20' : 'bg-black'
+        }`}>
+          <div className="w-1.5 h-1.5 bg-[#2cff3a] rounded-full" />
+          <span className="text-white text-sm">Active</span>
+        </div>
+      </div>
+      
+      <div className="flex flex-col gap-3">
+        <div className={`text-sm font-medium ${isBlack ? 'text-white' : 'text-[#030303]'}`}>
+          Budget
+        </div>
+        <div className="flex justify-between items-end">
+          <div className={`text-[32px] font-medium ${isBlack ? 'text-white' : 'text-black'}`}>
+            {formatCurrency(currentBudget)}
           </div>
-          
-          <div className="self-stretch h-[76px] flex-col justify-start items-start gap-3 flex">
-            <div className={`self-stretch h-4 ${isBlack ? 'text-white' : 'text-[#030303]'} text-sm font-medium font-poppins`}>
-              Budget
-            </div>
-            <div className="self-stretch grow shrink basis-0 justify-between items-end inline-flex">
-              <div className={`w-32 h-8 ${isBlack ? 'text-white' : 'text-black'} text-[32px] font-medium font-poppins`}>
-                {formatCurrency(currentBudget)}
-              </div>
-              <div className="w-[127px] h-6 text-[#838383] text-xl font-medium font-poppins">
-                /${formatTotalBudget(totalBudget)}
-              </div>
-            </div>
-            <div className="w-[302px] h-1 relative">
-              <div className={`w-[302px] h-1 left-0 top-0 absolute ${isBlack ? 'bg-white/20' : 'bg-[#6e6e6e]/20'} rounded-[100px]`} />
-              <div 
-                className="h-1 left-0 top-0 absolute rounded-[100px] transition-all duration-300"
-                style={{
-                  width: `${Math.min(progress, 100)}%`,
-                  backgroundColor: progressColor
-                }}
-              />
-            </div>
+          <div className="text-[#838383] text-xl">
+            /${formatTotalBudget(totalBudget)}
           </div>
+        </div>
+        <div className="w-full h-1 relative">
+          <div className={`w-full h-full absolute ${isBlack ? 'bg-white/20' : 'bg-[#6e6e6e]/20'} rounded-full`} />
+          <div 
+            className="h-full absolute rounded-full transition-all duration-300"
+            style={{
+              width: `${Math.min(progress, 100)}%`,
+              backgroundColor: progressColor
+            }}
+          />
         </div>
       </div>
     </div>
