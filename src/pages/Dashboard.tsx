@@ -50,13 +50,15 @@ const Dashboard = () => {
             </div>
           ) : (
             // Desktop Layout
-            <div className="flex items-start gap-4 w-full">
-              <div className="flex flex-col gap-[48px] flex-1">
+            <div className="flex items-start gap-6 w-full">
+              <div className="w-[45%]">
                 <Greeting />
-                <DashRecentTrans />
+                <div className="mt-12">
+                  <DashRecentTrans />
+                </div>
               </div>
-              <div className="flex flex-col gap-2 flex-1">
-                <div className="flex flex-col gap-2">
+              <div className="w-[55%] flex flex-col gap-4">
+                <div className="flex flex-col gap-4">
                   <DashPropCardBlack
                     propertyName="Eagle Dr"
                     currentBudget={22950}
