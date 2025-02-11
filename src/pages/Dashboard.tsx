@@ -37,7 +37,7 @@ const Dashboard = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-6 w-full">
               {/* Left Column - Greeting & Transactions */}
               <div className="md:col-span-1 lg:col-span-4 h-full">
-                <div className="flex flex-col gap-6 h-full">
+                <div className="flex flex-col gap-14 h-full">
                   <div className="flex-none">
                     <Greeting />
                   </div>
