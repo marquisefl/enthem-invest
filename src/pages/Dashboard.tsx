@@ -37,31 +37,36 @@ const Dashboard = () => {
               </div>
             </div>
           ) : (
-            // Desktop Layout - Responsive Grid
-            <div className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-6 w-full">
-              {/* Left Column - Greeting & Transactions */}
-              <div className="md:col-span-1 lg:col-span-4 h-full">
-                <div className="flex flex-col justify-between items-start gap-[72px] h-full">
-                  <div className="flex-none">
-                    <Greeting />
+            // Desktop Layout - Two Row Grid
+            <div className="flex flex-col gap-6 w-full">
+              {/* First Row */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-6 w-full">
+                {/* Left Column - Greeting & Transactions */}
+                <div className="md:col-span-1 lg:col-span-4 h-[432px]">
+                  <div className="flex flex-col justify-between items-start h-full">
+                    <div className="flex-none">
+                      <Greeting />
+                    </div>
+                    <div className="flex-1 w-full">
+                      <DashRecentTrans />
+                    </div>
                   </div>
-                  <div className="flex-1 w-full">
-                    <DashRecentTrans />
-                  </div>
-                  <div className="w-full">
-                    <DealAnalyzer />
-                  </div>
+                </div>
+
+                {/* Middle Column - Property Cards */}
+                <div className="md:col-span-1 lg:col-span-3 h-[432px]">
+                  <DashPropCards />
+                </div>
+
+                {/* Right Column - Spending Overview */}
+                <div className="md:col-span-2 lg:col-span-5 h-[432px]">
+                  <CatSpendCard />
                 </div>
               </div>
 
-              {/* Middle Column - Property Cards */}
-              <div className="md:col-span-1 lg:col-span-3 h-[432px]">
-                <DashPropCards />
-              </div>
-
-              {/* Right Column - Spending Overview */}
-              <div className="md:col-span-2 lg:col-span-5 h-[432px]">
-                <CatSpendCard />
+              {/* Second Row */}
+              <div className="w-full">
+                <DealAnalyzer />
               </div>
             </div>
           )}
