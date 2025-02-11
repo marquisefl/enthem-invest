@@ -56,18 +56,20 @@ const Dashboard = () => {
                 <DashRecentTrans />
               </div>
               <div className="flex flex-col gap-2 flex-1">
-                <DashPropCardBlack
-                  propertyName="Eagle Dr"
-                  currentBudget={22950}
-                  totalBudget={40000}
-                  isActive={true}
-                />
-                <DashPropCardWhite
-                  propertyName="Highway Ln"
-                  currentBudget={25110}
-                  totalBudget={20000}
-                  isActive={true}
-                />
+                <div className="flex flex-col gap-2">
+                  <DashPropCardBlack
+                    propertyName="Eagle Dr"
+                    currentBudget={22950}
+                    totalBudget={40000}
+                    isActive={true}
+                  />
+                  <DashPropCardWhite
+                    propertyName="Highway Ln"
+                    currentBudget={25110}
+                    totalBudget={20000}
+                    isActive={true}
+                  />
+                </div>
                 <CatSpendCard />
               </div>
             </div>
