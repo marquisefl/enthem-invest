@@ -1,3 +1,4 @@
+
 import { Search, Grid2X2, Building2, MessageSquareQuote, Users, Bell, Settings, Menu } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -42,11 +43,11 @@ const NavigationBar = () => {
 
         {/* Bottom Navigation */}
         <div className="fixed bottom-6 left-4 right-4 z-50">
-          <div className="bg-black rounded-lg py-4 px-6">
+          <div className="bg-black rounded-xl py-4 px-6">
             <div className="flex justify-between items-center">
               {/* Dashboard */}
               <Link to="/dashboard" className="flex flex-col items-center">
-                <Building2 className={`w-6 h-6 ${isActive('/dashboard') ? 'text-white' : 'text-gray-400'}`} />
+                <Grid2X2 className={`w-6 h-6 ${isActive('/dashboard') ? 'text-white' : 'text-gray-400'}`} />
                 <span className={`text-xs mt-1 ${isActive('/dashboard') ? 'text-white' : 'text-gray-400'}`}>Dash</span>
               </Link>
 
