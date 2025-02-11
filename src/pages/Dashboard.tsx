@@ -13,18 +13,18 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen w-full">
       <NavigationBar />
-      <div className="p-4 sm:p-6 sm:pl-32 relative z-10 max-w-full">
+      <div className="p-4 sm:p-6 sm:pl-32 relative z-10 w-full max-w-[100vw]">
         {!isMobile && (
           <div className="mt-6">
             <Header />
           </div>
         )}
-        <div className="mt-6 sm:mt-10">
+        <div className="mt-6 sm:mt-10 w-full">
           {isMobile ? (
             // Mobile Layout
-            <div className="flex flex-col gap-4 w-full max-w-[calc(100vw-2rem)]">
+            <div className="flex flex-col gap-4 w-full">
               <Greeting />
-              <div className="w-full max-w-full overflow-hidden">
+              <div className="w-full">
                 <DashPropCardBlack
                   propertyName="Eagle Dr"
                   currentBudget={22950}
@@ -32,7 +32,7 @@ const Dashboard = () => {
                   isActive={true}
                 />
               </div>
-              <div className="w-full max-w-full overflow-hidden">
+              <div className="w-full">
                 <DashPropCardWhite
                   propertyName="Highway Ln"
                   currentBudget={25110}
@@ -40,18 +40,18 @@ const Dashboard = () => {
                   isActive={true}
                 />
               </div>
-              <div className="w-full max-w-full overflow-hidden">
+              <div className="w-full">
                 <DashRecentTrans />
               </div>
             </div>
           ) : (
             // Desktop Layout
-            <div className="flex items-start gap-4">
-              <div className="flex flex-col gap-[64px]">
+            <div className="flex items-start gap-4 w-full">
+              <div className="flex flex-col gap-[64px] flex-1">
                 <Greeting />
                 <DashRecentTrans />
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 flex-1">
                 <DashPropCardBlack
                   propertyName="Eagle Dr"
                   currentBudget={22950}

@@ -32,12 +32,12 @@ const DashRecentTrans: React.FC<DashRecentTransProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 w-full">
       {transactions.map((transaction, index) => (
-        <div key={index} className="w-[368px] h-20 relative">
-          <div className="w-[368px] h-20 left-0 top-0 absolute bg-white rounded-lg" />
-          <div className="w-80 h-12 left-[24px] top-[16px] absolute justify-between items-center inline-flex">
-            <div className="w-36 flex-col justify-start items-start inline-flex">
+        <div key={index} className="w-full relative">
+          <div className="w-full h-20 left-0 top-0 absolute bg-white rounded-lg" />
+          <div className="w-full h-12 px-6 py-4 absolute justify-between items-center inline-flex">
+            <div className="flex-1 flex-col justify-start items-start inline-flex">
               <div className="self-stretch h-6 text-black text-base font-medium font-poppins">
                 {transaction.type}
               </div>
@@ -48,7 +48,7 @@ const DashRecentTrans: React.FC<DashRecentTransProps> = ({
                 </span>
               </div>
             </div>
-            <div className="w-[72px] h-6 relative">
+            <div className="w-[72px] h-6 relative flex-shrink-0">
               <div className={`w-[72px] h-6 left-0 top-0 absolute ${getStatusStyle(transaction.status)} rounded-[18px]`} />
               <div className={`w-full h-6 flex items-center justify-center text-sm font-medium font-poppins`}>
                 {transaction.status}
