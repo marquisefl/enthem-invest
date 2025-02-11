@@ -15,6 +15,10 @@ const NavigationBar = () => {
     if (path === '/dashboard') {
       return location.pathname === '/' || location.pathname === '/dashboard';
     }
+    // For mobile, only allow dashboard to be active
+    if (isMobile && path !== '/dashboard') {
+      return false;
+    }
     return location.pathname === path;
   };
 
