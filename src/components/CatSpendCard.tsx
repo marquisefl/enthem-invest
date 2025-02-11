@@ -18,8 +18,8 @@ const CatSpendCard = () => {
   ];
 
   return (
-    <div className="w-full bg-white rounded-[20px] px-5 py-5 h-full flex flex-col justify-between items-start">
-      <div className="flex items-center justify-between w-full mb-8">
+    <div className="w-full h-full bg-white rounded-[20px] px-5 py-5 flex flex-col justify-between">
+      <div className="flex items-center justify-between w-full">
         <h2 className="text-base font-semibold text-black">
           Spending Overview
         </h2>
@@ -57,7 +57,7 @@ const CatSpendCard = () => {
         </div>
       </div>
 
-      <div className="flex items-end justify-between w-full px-4 pb-8">
+      <div className="flex items-end justify-between w-full px-4">
         {categories.map((category) => (
           <div
             key={category.name}
