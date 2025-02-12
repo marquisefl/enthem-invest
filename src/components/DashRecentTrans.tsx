@@ -48,7 +48,7 @@ const DashRecentTrans: React.FC<DashRecentTransProps> = ({
                 </span>
               </div>
             </div>
-            <div className={`px-2.5 py-0.5 rounded-full ${getStatusStyle(transaction.status)}`}>
+            <div className={`w-[72px] h-6 flex items-center justify-center rounded-full ${getStatusStyle(transaction.status)}`}>
               <span className="text-xs font-medium">
                 {transaction.status}
               </span>

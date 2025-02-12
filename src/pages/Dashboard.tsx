@@ -13,7 +13,7 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen w-full">
       <NavigationBar />
-      <div className="p-4 sm:pt-6 sm:pl-32 relative z-10 w-full max-w-[100vw] box-border">
+      <div className="p-4 sm:px-6 sm:pt-16 sm:pl-32 relative z-10 w-full max-w-[100vw] box-border">
         <div className="w-full">
           {isMobile ? (
             // Mobile Layout
