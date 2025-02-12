@@ -23,6 +23,11 @@ const DealAnalyzer = () => {
   const [result, setResult] = useState<{
     isGoodDeal: boolean;
     estimatedProfit: number;
+    breakdown: {
+      totalCosts: number;
+      interestCost: number;
+      loanAmount: number;
+    };
   } | null>(null);
 
   const handleInputChange = (field: keyof DealInputs, value: string) => {
@@ -58,6 +63,11 @@ const DealAnalyzer = () => {
     setResult({
       isGoodDeal,
       estimatedProfit,
+      breakdown: {
+        totalCosts,
+        interestCost,
+        loanAmount,
+      }
     });
 
     if (isGoodDeal) {
@@ -73,8 +83,18 @@ const DealAnalyzer = () => {
   };
 
   return (
-    <div className="rounded-2xl bg-black p-6 pb-8 flex flex-col max-w-[368px]">
-      {showConfetti && <ReactConfetti recycle={false} />}
+    <div className="rounded-2xl bg-black p-6 pb-8 flex flex-col max-w-[368px] relative overflow-hidden">
+      {showConfetti && (
+        <div className="absolute inset-0">
+          <ReactConfetti
+            width={368}
+            height={600}
+            recycle={false}
+            numberOfPieces={200}
+            gravity={0.2}
+          />
+        </div>
+      )}
       
       <div className="flex flex-col font-poppins">
         <h2 className="text-2xl font-semibold text-white">Deal Analyzer</h2>
@@ -116,9 +136,43 @@ const DealAnalyzer = () => {
         </div>
       </div>
 
+      {result && (
+        <div className="mt-6 p-4 rounded-xl bg-white/5 text-white">
+          <h3 className="text-lg font-semibold mb-3">Deal Breakdown</h3>
+          <div className="space-y-2 text-sm">
+            <div className="flex justify-between">
+              <span className="text-[#848484]">Purchase Price:</span>
+              <span>${inputs.purchasePrice.toLocaleString()}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-[#848484]">Rehab Budget:</span>
+              <span>${inputs.rehabBudget.toLocaleString()}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-[#848484]">Interest Cost:</span>
+              <span>${result.breakdown.interestCost.toLocaleString()}</span>
+            </div>
+            <div className="flex justify-between font-medium border-t border-white/10 pt-2 mt-2">
+              <span className="text-[#848484]">Total Costs:</span>
+              <span>${result.breakdown.totalCosts.toLocaleString()}</span>
+            </div>
+            <div className="flex justify-between font-medium">
+              <span className="text-[#848484]">ARV:</span>
+              <span>${inputs.arv.toLocaleString()}</span>
+            </div>
+            <div className="flex justify-between font-semibold border-t border-white/10 pt-2 mt-2">
+              <span>Estimated Profit:</span>
+              <span className={result.isGoodDeal ? "text-green-400" : "text-red-400"}>
+                ${result.estimatedProfit.toLocaleString()}
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
+
       <button
         onClick={calculateDeal}
-        className="mt-14 rounded-full bg-white px-6 py-3 text-black font-semibold text-base flex items-center justify-between"
+        className="mt-6 rounded-full bg-white px-6 py-3 text-black font-semibold text-base flex items-center justify-between"
       >
         <span>Calculate</span>
         <span className="rotate-180">→</span>
