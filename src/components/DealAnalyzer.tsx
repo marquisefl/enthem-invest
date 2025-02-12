@@ -3,6 +3,7 @@ import { useState } from "react";
 import ReactConfetti from "react-confetti";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface DealInputs {
   purchasePrice: number;
@@ -13,6 +14,7 @@ interface DealInputs {
 
 const DealAnalyzer = () => {
   const { toast } = useToast();
+  const isMobile = useIsMobile();
   const [showConfetti, setShowConfetti] = useState(false);
   const [showForm, setShowForm] = useState(true);
   const [inputs, setInputs] = useState<DealInputs>({
@@ -97,11 +99,11 @@ const DealAnalyzer = () => {
   };
 
   return (
-    <div className="rounded-2xl bg-black p-6 pb-8 flex flex-col max-w-[368px] relative overflow-hidden">
+    <div className="rounded-2xl bg-black p-4 sm:p-6 pb-6 sm:pb-8 flex flex-col w-full sm:max-w-[368px] relative overflow-hidden">
       {showConfetti && (
         <div className="absolute inset-0">
           <ReactConfetti
-            width={368}
+            width={isMobile ? window.innerWidth - 32 : 368}
             height={600}
             recycle={false}
             numberOfPieces={200}
@@ -111,13 +113,13 @@ const DealAnalyzer = () => {
       )}
       
       <div className="flex flex-col font-poppins">
-        <h2 className="text-2xl font-semibold text-white">Deal Analyzer</h2>
-        <p className="text-[#848484] mt-1">Evaluate a deal quick and fast</p>
+        <h2 className="text-xl sm:text-2xl font-semibold text-white">Deal Analyzer</h2>
+        <p className="text-[#848484] mt-1 text-sm sm:text-base">Evaluate a deal quick and fast</p>
       </div>
 
       {showForm ? (
         <>
-          <div className="mt-6 flex flex-col gap-3 text-[#848484] text-[15px]">
+          <div className="mt-4 sm:mt-6 flex flex-col gap-3 text-[#848484] text-sm sm:text-[15px]">
             <div>
               <Input
                 placeholder="Purchase Price"
@@ -127,7 +129,7 @@ const DealAnalyzer = () => {
               />
             </div>
 
-            <div className="flex gap-3.5">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-3.5">
               <Input
                 placeholder="ARV"
                 type="number"
@@ -154,7 +156,7 @@ const DealAnalyzer = () => {
 
           <button
             onClick={calculateDeal}
-            className="mt-6 rounded-full bg-white px-6 py-3 text-black font-semibold text-base flex items-center justify-between"
+            className="mt-4 sm:mt-6 rounded-full bg-white px-4 sm:px-6 py-2.5 sm:py-3 text-black font-semibold text-sm sm:text-base flex items-center justify-between"
           >
             <span>Calculate</span>
             <span className="rotate-180">→</span>
@@ -162,9 +164,9 @@ const DealAnalyzer = () => {
         </>
       ) : result && (
         <>
-          <div className="mt-6 p-4 rounded-xl bg-white/5 text-white">
-            <h3 className="text-lg font-semibold mb-3">Deal Breakdown</h3>
-            <div className="space-y-2 text-sm">
+          <div className="mt-4 sm:mt-6 p-3 sm:p-4 rounded-xl bg-white/5 text-white">
+            <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">Deal Breakdown</h3>
+            <div className="space-y-2 text-xs sm:text-sm">
               <div className="flex justify-between">
                 <span className="text-[#848484]">Purchase Price:</span>
                 <span>${inputs.purchasePrice.toLocaleString()}</span>
@@ -196,7 +198,7 @@ const DealAnalyzer = () => {
 
           <button
             onClick={resetForm}
-            className="mt-6 rounded-full bg-white px-6 py-3 text-black font-semibold text-base flex items-center justify-between"
+            className="mt-4 sm:mt-6 rounded-full bg-white px-4 sm:px-6 py-2.5 sm:py-3 text-black font-semibold text-sm sm:text-base flex items-center justify-between"
           >
             <span>Calculate New Deal</span>
             <span className="rotate-180">→</span>
